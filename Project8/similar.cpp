@@ -1,4 +1,6 @@
 #include <string>
+#include <cmath>
+#include <iostream>
 
 class LengthChecker {
 public:
@@ -8,9 +10,16 @@ public:
 		if (str1Len == str2Len) {
 			return MAX_LENGTH_SCORE;
 		}
-		if ((str1Len >= str2Len) || (str2Len >= str1Len)) {
+
+		if ((str1Len >= str2Len * 2) || (str2Len >= str1Len * 2)) {
 			return MIN_LENGTH_SCORE;
 		}
+
+		int gap = std::abs(str1Len - str2Len);
+		int min = std::min(str1Len, str2Len);
+		int result = (60 - (gap * 60 / min));
+
+		return result;
 	}
 
 private:

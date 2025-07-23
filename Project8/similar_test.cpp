@@ -12,3 +12,15 @@ TEST(TS, TC0) {
 	int result = checker.getLengthScore("A", "BB");
 	EXPECT_EQ(0, result);
 }
+
+TEST(TS, TcForother1) {
+	LengthChecker checker;
+	int result = checker.getLengthScore("AAABB", "BAA");
+	EXPECT_EQ(20, result);
+}
+
+TEST(TS, TcForother2) {
+	LengthChecker checker;
+	int result = checker.getLengthScore("AA", "AAE");
+	EXPECT_EQ(30, result);
+}
