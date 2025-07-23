@@ -1,5 +1,9 @@
 #include "gmock/gmock.h"
+#include "similar.cpp"
 
-TEST(TS, TC1) {
-	EXPECT_EQ(1, 1);
+
+TEST(TS, TC60) {
+	LengthChecker checker;
+	int result = checker.getLengthScore("ASD", "DSA");
+	EXPECT_EQ(60, result);
 }
